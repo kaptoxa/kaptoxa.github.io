@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-12-13 Пн 16:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Атомные привычки</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css"> @media only screen and (min-width: 700px) { #content { display: block; width: 700px; margin: 0 auto; }}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Атомные привычки</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org42bde96">Введение</a></li>
+<li><a href="#orgc818d81"><b>Первый закон. Сделайте очевидным</b></a></li>
+<li><a href="#org7b23382"><b>Второй закон. Добавьте привлекательности</b></a></li>
+<li><a href="#org953f5fa"><b>Треттий закон. Упростите</b></a></li>
+<li><a href="#orgf5ab2b2"><b>Четверный закон. Привнесите удовольствие</b></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org42bde96" class="outline-2">
+<h2 id="org42bde96">Введение</h2>
+<div class="outline-text-2" id="text-org42bde96">
+</div>
+<ul class="org-ul">
+<li><a id="org5fb6db8"></a><b>Гл.1 Удивительная сила привычек</b><br />
+<ul class="org-ul">
+<li><a id="org3e03dea"></a><b>Привычки - производная процесса самосовершенствования</b><br /></li>
+
+<li><a id="orgbd4b0ee"></a><b><a href="20211201073905.html#ID-50736aa9-3417-4d41-8146-170d06817bea">Плато скрытого потенциала</a></b><br />
+<div class="outline-text-4" id="text-orgbd4b0ee">
+<p>
+Эффект от привычек накапливается нелинейно и постепенно.
+</p>
+</div>
+</li>
+
+<li><a id="orgaf22a7b"></a><b>Система важнее целей</b><br />
+<div class="outline-text-4" id="text-orgaf22a7b">
+<blockquote>
+<p>
+А теперь интересный вопрос: если бы вы полностью игнорировали цели и
+сконцентрировались только на системе, вы бы достигли успеха?
+Например, если бы вы были тренером по баскетболу и игнорировали бы
+цель – победить в соревновании, но сфокусировались бы только на том,
+что команда каждый день делает на тренировках, вы достигли бы
+результата?  Я думаю, что да.
+</p>
+</blockquote>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org4d1571f"></a><b>Гл.2 Как привычки формируют идентичность (и наоборот)</b><br />
+<ul class="org-ul">
+<li><a id="org24d1142"></a><b>Трёхуровневая <a href="20211127131829.html#ID-f6387282-c410-4a09-8e7d-20246882d447">модель</a> модель измения поведения</b><br />
+<div class="outline-text-4" id="text-org24d1142">
+<p>
+Указывает на то, что поведение противоречащее идентичности не
+продлится долго.
+</p>
+</div>
+</li>
+
+<li><a id="org248b94c"></a><b>Двухэтапный процесс изменения идентичности</b><br />
+<div class="outline-text-4" id="text-org248b94c">
+<p>
+Чем чаще вы повторяете те или иные действия, тем больше вы усиливаете
+идентичность, которая ассоциируется с таким поведением. Вы начинаете
+верить, что действительно можете справиться с теми или иными задачами.
+</p>
+<ol class="org-ol">
+<li>Решите, каким человеком хотите быть.</li>
+<li>Докажите себе, что вы и есть такой человек, с помощью малых
+достижений.</li>
+</ol>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org471e5ca"></a><b>Гл.3 Наука формирования привычек</b><br />
+<ul class="org-ul">
+<li><a id="orgc55280a"></a><b><a href="20211203074921.html#ID-2196d9c1-27d3-4817-bd26-9e611273fa86">Цикл привычки</a></b><br /></li>
+
+<li><a id="org7ecb948"></a><b>Табличка <a href="20211201071418.html#ID-78363bc7-7f56-4689-98d5-88846c80eaf5">законов изменения поведения</a></b><br /></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgc818d81" class="outline-2">
+<h2 id="orgc818d81"><b>Первый закон. Сделайте очевидным</b></h2>
+<div class="outline-text-2" id="text-orgc818d81">
+</div>
+<ul class="org-ul">
+<li><a id="orga547e12"></a><b>Гл.6 <a href="20211129045119.html#ID-2dd9f33b-1fc3-431e-af6e-8276da3ca67a">Важность окружения для изменения привычек</a></b><br />
+<ul class="org-ul">
+<li><a id="orgf4c0c69"></a><b>Важно как мы воспринимаем стимулы</b><br />
+<div class="outline-text-4" id="text-orgf4c0c69">
+<p>
+<a href="20211129050213.html#ID-d02354dd-31d0-4e28-a973-c5fbc38f09d6">Зрение - основной рецептор человека</a>, визуальные стимулы самые мощные
+катализаторы.
+</p>
+</div>
+</li>
+
+<li><a id="org15f61ea"></a><b>Станьте архитектором своего окружения</b><br />
+<div class="outline-text-4" id="text-org15f61ea">
+<p>
+Каждая привычка инициируется стимулом, Хорошие стимулы должны быть
+<a href="20211129050806.html#ID-5bb543ae-1c99-471b-8640-ac457304f2dc">очевидными</a>, если вы хотите создать привычку важной частью жизни,
+сделайте стимул важной частью окружения.
+</p>
+</div>
+</li>
+
+<li><a id="orga5021aa"></a><b>Со временем привычка начинает ассоциироваться с полным контекстом</b><br />
+<ul class="org-ul">
+<li><a id="org484fe9e"></a><b>Поведение определяется не объектами а отношением к ним.</b><br />
+<div class="outline-text-5" id="text-org484fe9e">
+<p>
+У разных людей с одним местом ассоциируются разные привычки, например
+диван может использоваться для просмотра ТВ или чтения.
+</p>
+</div>
+</li>
+
+<li><a id="org4d2e0b9"></a><b><a href="20211129051702.html#ID-07409db7-0865-4a9d-96b4-fe95d0205bbf">Вы можете связать привычку с контекстом</a></b><br /></li>
+
+<li><a id="org6578221"></a><b><a href="20211129051833.html#ID-5ce9ece8-2ad8-4a8a-9035-dc706104489e">Не смешивайте контексты</a></b><br /></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a id="orgfd7c09c"></a><b>Гл.7 Секрет самоконтроля</b><br />
+<ul class="org-ul">
+<li><a id="orgbf725e1"></a><b><a href="20211129052925.html#ID-9249801a-4696-4945-944f-4ee617990fab">Поведение людей не определяется самоконтролем</a></b><br /></li>
+
+<li><a id="orgf9a7819"></a><b><a href="20211129053714.html#ID-1edec545-de42-4ad4-847f-b2e8dea07a1e">Стимулы сохраняются десятилетиями</a></b><br />
+<div class="outline-text-4" id="text-orgf9a7819">
+<p>
+Вы можете избавиться от привычки, но не способны забыть её. Простое
+противостояние искушению неэффективно в долгосрочной перспективе.
+</p>
+</div>
+</li>
+
+<li><a id="orgde54956"></a><b><a href="20211129053838.html#ID-b25d3cef-4bc0-4882-900a-5625db76328f">Дурные привычки могут быть аутокаталитическими</a></b><br />
+<div class="outline-text-4" id="text-orgde54956">
+<p>
+Один из наиболее практичных способов устранить плохую привычку – это
+снизить воздействие на себя стимула, который провоцирует ее.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org7b23382" class="outline-2">
+<h2 id="org7b23382"><b>Второй закон. Добавьте привлекательности</b></h2>
+<div class="outline-text-2" id="text-org7b23382">
+</div>
+<ul class="org-ul">
+<li><a id="org6b1bfd3"></a><b>Гл.8 Как сделать привычку привлекательной</b><br />
+<ul class="org-ul">
+<li><a id="org1ebb2a6"></a><b>Люди склонны поддаваться на приукрашенные версии реальности</b><br /></li>
+
+<li><a id="org3e7b149"></a><b>Чем привлекательней возможность, тем вероятней она станет привычкой</b><br />
+<div class="outline-text-4" id="text-org3e7b149">
+<p>
+c.66 Сущеуствует <a href="20211201064807.html#ID-bdfa3dba-095a-4a80-ad8e-af3d78652a81">обратная связь, управляемая дофамином,</a> которая делает
+поведение привлекательным. Именно ожидание вознаграждения, а не само
+его получение побуждает вас действовать. Система подкрепления, которая
+активируется в мозгу, когда вы <i>получаете</i> вознаграждение, является той
+же самой, которая активируется, когда вы <i>ожидаете</i>
+вознаграждение. <a href="20211201065601.html#ID-806535cd-5248-452d-bf97-bd05050bffcc">Всплески дофамина</a>
+</p>
+</div>
+</li>
+
+<li><a id="orgdce00b6"></a><b>Как сочетать приятное с полезным</b><br />
+<div class="outline-text-4" id="text-orgdce00b6">
+<p>
+Психологическая теория, известная как принцип Пермака: «Более
+вероятное поведение усилит маловероятное поведение». Связать действие,
+оторое вы <i>хотите</i> сделать с действием, которое вам <i>нужно</i> сделать.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="orgdc93c04"></a><b>Гл.9 Роль семьи и друзей</b><br />
+<div class="outline-text-3" id="text-orgdc93c04">
+<p>
+<a href="20211203063009.html#ID-663ca0d3-4371-4fab-9097-64e39168f7ee">Сестры Полгар</a> как пример того, что среда в которой мы живём,
+определяет, какое поведение для нас будет привлекательным.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org51fac5d"></a><b>Люди - стадные животные.</b><br />
+<div class="outline-text-4" id="text-org51fac5d">
+<p>
+В частности, мы подражаем привычкам трех групп:
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org0eafe43"></a><b>Близкого окружения</b><br />
+<div class="outline-text-5" id="text-org0eafe43">
+<p>
+Одна из самых эффективных вещей, которые можно сделать, чтобы
+сформировать лучшие привычки, – стать частью окружения, в которой ваше
+желаемое поведение является нормальным.
+</p>
+</div>
+</li>
+
+<li><a id="orgf009d98"></a><b>Большинства</b><br />
+<div class="outline-text-5" id="text-orgf009d98">
+<p>
+В большинстве случаев мы предпочитаем ошибаться в толпе, чем быть
+правыми в одиночку.
+</p>
+</div>
+</li>
+
+<li><a id="orgf4a9011"></a><b>Авторитетам</b><br /></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a id="orgeea9c1b"></a><b>Гл.10 Как найти и устранить причины вредных привычек</b><br />
+<ul class="org-ul">
+<li><a id="orgac3ae50"></a><b><a href="20211203070410.html#ID-67776ccf-aca6-46e6-9f10-961fc6556b08">Привычки это ассоциации</a>, которые определяют наше поведение.</b><br />
+<div class="outline-text-4" id="text-orgac3ae50">
+<p>
+Привычки можно назвать попыткой обратиться к фундаментальным базовым
+<a href="20211203065729.html#ID-82456460-6345-44cd-b14d-66ab1e44e606">мотивам</a>, которые остаются неизменными.
+</p>
+</div>
+</li>
+
+<li><a id="org1352cf1"></a><b>Как перепрограммировать мозг, чтобы наслаждаться сложными привычками</b><br />
+<div class="outline-text-4" id="text-org1352cf1">
+<p>
+Нужно научится ассоциировать их с положительным опытом. Иногда всё что
+нужно - небольшой сдвиг в мышлении. Мы можем найти доказательства для
+любого образа мышления, который выберем.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org953f5fa" class="outline-2">
+<h2 id="org953f5fa"><b>Треттий закон. Упростите</b></h2>
+<div class="outline-text-2" id="text-org953f5fa">
+</div>
+<ul class="org-ul">
+<li><a id="org5e46712"></a><b>Гл.11 <a href="20211130115522.html#ID-1224243e-f3f5-44cf-b395-92c2172ecb85">Движение не есть действие</a></b><br />
+<div class="outline-text-3" id="text-org5e46712">
+<p>
+Каждый раз, повторяя действие, вы активируете определенную нейронную
+цепь, связанную с этой привычкой. Значит, повторение - один из
+наиболее важных шагов формирования новой привычки. Важна частота
+повторения.
+</p>
+</div>
+</li>
+
+<li><a id="org48406de"></a><b>Гл.12 Закон наименьшего усилия</b><br />
+<div class="outline-text-3" id="text-org48406de">
+<p>
+То, что вы действительно хотите, – это результат, который дает
+привычка. Чем больше препятствие, то есть чем сложнее привычка, тем
+больше напряжения возникает между вами и желаемым конечным состоянием.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org8e31fc0"></a><b>Как добиться большего меньшими усилиями</b><br />
+<div class="outline-text-4" id="text-org8e31fc0">
+<p>
+Вместо того чтобы пытаться преодолеть напряжение в жизни, вы
+уменьшаете его. <a href="20211203105835.html#ID-630ef133-681b-4ca7-ba43-30fdf25cbec8">Сложение путем вычитания</a>. Основная идея в том, чтобы
+создать среду в которой делать правильные вещи так просто, насколько
+возможно.
+</p>
+</div>
+</li>
+
+<li><a id="orgb4ea54a"></a><b>Подготовка окружающей среды для использования в будущем</b><br />
+<div class="outline-text-4" id="text-orgb4ea54a">
+<p>
+Всякий раз организуя пространство по прямому назначению, вы
+подготавливаете облегчение выполнения следующего действия.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org9d84828"></a><b>Гл.13 <a href="20211203110509.html#ID-a1335651-1ed5-4dc4-8cb2-30e975b2348a">Правило двух минут</a></b><br />
+<div class="outline-text-3" id="text-org9d84828">
+<p>
+Каждый день есть несколько <a href="20211206054942.html#ID-8e5fa86e-8975-4183-9b48-99070187fd8a">коротких решающих моментов</a>, определяющих
+наши привычки. Мы ведомы привычками, если не контролируем их. Именно
+эти моменты вносят ограничения в нашу жизнь. Для того, чтобы взять их
+под контроль необходимо создать входной ритуал для новой
+привычки. Этот ритуал не должен занимать более двух минут.
+</p>
+</div>
+</li>
+
+<li><a id="org107f36c"></a><b>Гл.14 Как сделать привычки неизбежными и невозможными</b><br />
+<div class="outline-text-3" id="text-org107f36c">
+<p>
+Обратная трактовка первого закона - "Усложните". Психологи называют это
+<i>методом самоограничения</i>. Он предполагает принятие в настоящем такого
+решения, которое будет контролировать действия в будущем. Например,
+wifi-роутер с таймером на выключение в 22:00 как знак. что пора
+ложиться спать. Автоматизация в помощь. <a href="20211206065655.html#ID-e44c69b2-2127-4d87-853e-be3c80a97c94">Вакцины привычек от Клира</a>
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgf5ab2b2" class="outline-2">
+<h2 id="orgf5ab2b2"><b>Четверный закон. Привнесите удовольствие</b></h2>
+<div class="outline-text-2" id="text-orgf5ab2b2">
+</div>
+<ul class="org-ul">
+<li><a id="orgab87047"></a><b>Гл.15 Главное правило</b><br />
+<div class="outline-text-3" id="text-orgab87047">
+<p>
+Четвертый закон изменения поведения – привнесите <a href="20211209011246.html#ID-2efb32ca-de0d-447e-b58e-6ce491fc287c">удовольствие</a> –
+увеличивает вероятность того, что нужное поведение повторится в
+следующий раз.  Ограничением для нас становится то, что мы живём в
+<a href="20211207013034.html#ID-2f944d73-21aa-4420-9a5b-8e2a298bc6b8">среде отложенного отклика</a>. Так вот что значит
+<a href="20211209001017.html#ID-f8982661-9571-4df0-836c-c21c8c78203e">тише едешь - дальше будешь</a>!
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org624ba01"></a><b>Метод <i>закрепления</i> привычки</b><br />
+<div class="outline-text-4" id="text-org624ba01">
+<p>
+Привяжите привычку к немедленному вознаграждению. Следуйте личной
+программе лояльности - переводите деньги на "Счёт на путешествия"
+когда отказываетесь идти в рестран.
+</p>
+</div>
+</li>
+
+<li><a id="orgd698c33"></a><b>Не работайте на конфликт идентичностей</b><br />
+<div class="outline-text-4" id="text-orgd698c33">
+<p>
+Награда должна коррелировать с общей целью. Не награждайте себя за
+тренировку мороженым.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org2e0e11b"></a><b>Гл.16 Стратегия скрепок</b><br />
+<div class="outline-text-3" id="text-org2e0e11b">
+<p>
+Нам приятно видеть прогресс, а визуальные еденицы измерения
+доказывают, что он идёт. Они могут быть самыми разными, но, возможно,
+подойдёт <i>трекер привычки</i>.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org9dc705d"></a><b>Трекер делает привычку:</b><br />
+<ul class="org-ul">
+<li><a id="org7a868c1"></a><b>Очевидной.</b><br />
+<div class="outline-text-5" id="text-org7a868c1">
+<p>
+Когда доказательства прямо перед нами, мы менее склонны к самоообману.
+</p>
+</div>
+</li>
+
+<li><a id="orgbc0d7d5"></a><b>Привлекательной.</b><br />
+<div class="outline-text-5" id="text-orgbc0d7d5">
+<p>
+Самая эффективная форма мотивации это прогресс.
+</p>
+</div>
+</li>
+
+<li><a id="org8070929"></a><b>Приносящей удовольствие.</b><br />
+<div class="outline-text-5" id="text-org8070929">
+<p>
+Вы не думаете о результате, а просто пытаетесь не сойти с дистанции.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org4d0af29"></a><b>Как упростить ведение трекера?</b><br />
+<ul class="org-ul">
+<li><a id="org5ce594f"></a><b>Автоматизировать.</b><br /></li>
+
+<li><a id="org971c3d7"></a><b>Вручную отслеживать только самые важные привычки.</b><br /></li>
+
+<li><a id="orge018e3f"></a><b>Записывать каждую привычку сразу как только осуществили.</b><br /></li>
+</ul>
+</li>
+
+<li><a id="org92a54da"></a><b>Отношение к пропускам</b><br />
+<div class="outline-text-4" id="text-org92a54da">
+<p>
+Пропустил один раз – случайность. Пропустил дважды подряд – начало
+новой привычки. Поход в спортзал на пять минут не улучшит вашу форму,
+но зато утвердит идентичность. Принцип «все или ничего» – это первый
+камень, о который вы можете споткнуться, развивая привычки.
+</p>
+</div>
+</li>
+
+<li><a id="org754ee23"></a><b>Когда не стоит использовать трекер?</b><br />
+<div class="outline-text-4" id="text-org754ee23">
+<p>
+<i>Закон Гудхарта</i>: "Если показатель становится целью, то он перестаёт
+быть качественным показателем". Измерение хорошо тогда, когда оно
+направляет вас и служит дополнением к более широкой картине прогресса,
+а не тогда, когда оно поглощает вас. Только потому, что какой-то
+аспект привычки поддается измерению, это еще не значит, что он самый
+важный.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org21dbcf9"></a><b>Гл.17 Как друзья могу помочь</b><br />
+<div class="outline-text-3" id="text-org21dbcf9">
+<p>
+Когда последствия пугают, люди быстрее учатся. Чем быстрее
+осуществится негативное последствие нашего потенциального действия,
+тем выше вероятность, что мы будем его избегать.
+</p>
+
+<p>
+<b>Контракт о соблюдении привычки</b> - Устрое или письменное соглашение с
+другом или несколькими, по которому вы обязуетесь следовать
+привычке. Если вы этого не делаете, вам предусматривается наказание.
+</p>
+</div>
+</li>
+
+<li><a id="org265a2f1"></a><b>Гл.18 Правда о таланте</b><br />
+<div class="outline-text-3" id="text-org265a2f1">
+<p>
+Привычкам проще следовать, и они приносят больше удовлетворения, если
+соответствуют природным наклонностям и способностям. Необходимо
+выбрать подходящую область для применения своих талантов. Гены не
+определяют судьбу, они определяют область в которой открываются
+благоприятные возможности. Это те самые области в которых привычки
+скорее принесут удовлетворение.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgda8cd6c"></a><b>Как личность влияет на привычки</b><br />
+<div class="outline-text-4" id="text-orgda8cd6c">
+<p>
+Ну <a href="https://jamesclear.com/atomic-habits/personality">ё-маё внезапно соционика</a>! =\ У любой привычки есть
+разновидность, которая принесёт вам радость и удовлетворение. Найдите
+её! Схема анализа личностных особенностей "Большая пятерка".
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org8a24b52"></a><b>Открытость опыту</b><br />
+<div class="outline-text-5" id="text-org8a24b52">
+<p>
+От любопытства и изобретательности до осторожности и система-
+тичности.
+</p>
+</div>
+</li>
+
+<li><a id="orgb88a167"></a><b>Добросовестность</b><br />
+<div class="outline-text-5" id="text-orgb88a167">
+<p>
+Oт организованности и эффективности до беззаботности и импуль-
+сивности.
+</p>
+</div>
+</li>
+
+<li><a id="orgfb446ff"></a><b>Экстраверсия</b><br />
+<div class="outline-text-5" id="text-orgfb446ff">
+<p>
+От энергичности и легкости на подъем до уединения и замкнутости
+</p>
+</div>
+</li>
+
+<li><a id="orgeced2e4"></a><b>Уживчивость</b><br />
+<div class="outline-text-5" id="text-orgeced2e4">
+<p>
+От дружелюбия и сострадания до амбициозности и отрешенности.
+</p>
+</div>
+</li>
+
+<li><a id="org47cc024"></a><b>Невротизм</b><br />
+<div class="outline-text-5" id="text-org47cc024">
+<p>
+От озабоченности и чувствительности до уверенности, спокойствия и ста-
+бильности.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org55db66b"></a><b>Как найти игру с шансами в свою пользу</b><br />
+<div class="outline-text-4" id="text-org55db66b">
+<p>
+Первым шагом должно стать то, что упоминалось в третьем законе: <i>не
+усложняйте</i>. Вы не можете опробовать каждую карьеру или поиграть на
+каждом музыкальном инструменте. В долгосрочной перспективе эффективнее
+всего работать над стратегией, которая по ощущению обеспечивает
+наилучшие результаты в течение 80-90% времени, и продолжать
+исследования в оставшиеся 10-20%. Если у вас есть время - логично
+заниматься исследованием, если время поджимает - следует реализовать
+лучшее решение найденное на данный момент.
+</p>
+</div>
+</li>
+
+<li><a id="orgb95b3ea"></a><b>Признаки позволяющие сужать круг областей</b><br />
+<ul class="org-ul">
+<li><a id="org7dcfed2"></a>Что является удовольствием для меня и работой для других?<br /></li>
+
+<li><a id="org9c730a2"></a>Когда вы перестаете замечать течение времени?<br /></li>
+
+<li><a id="org244421e"></a>Где я смогу добиться лучших результатов, чем обычный человек?<br /></li>
+
+<li><a id="org81e2137"></a>Что мне легко дается?<br /></li>
+</ul>
+</li>
+
+<li><a id="orgf30d2d3"></a><b>Специализация</b><br />
+<div class="outline-text-4" id="text-orgf30d2d3">
+<p>
+Даже если вы не можете выиграть из-за того, что лучше других, вы
+можете выиграть потому, что отличаетесь от других. Объединение
+навыков, в которых вы немного лучше других, сокращает уровень
+конкуренции, благодаря чему вам будет проще выделиться на общем фоне.
+</p>
+</div>
+</li>
+
+<li><a id="org3df9371"></a><b>Как получить максимальную отдачу от генов</b><br />
+<div class="outline-text-4" id="text-org3df9371">
+<p>
+Гены не сделают вас успешным, если вы не работаете. Да, вполне
+возможно, что накачанный атлет в гимнастическом зале обладает лучшими
+генами. Но если вы не прошли те же тренировки, невозможно сказать,
+лучше или хуже ваше сочетание генов.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="orgb22b1ad"></a><b>Гл.19 Правило Златовласки</b><br />
+<div class="outline-text-3" id="text-orgb22b1ad">
+<p>
+Человеческий мозг любит проблемы, но только если они находятся в
+оптимальной зоне трудности. Мы максимально мотивированы, когда
+сталкиваемся с проблемой приемлемой трудности. В психологии это
+известно как закон Йеркса – Додсона, который описывает оптимальный
+уровень возбуждения как средний между скукой и тревогой.
+</p>
+
+<p>
+Максимальное желание переживается на полпути между успехом и
+неудачей. В психологии это известно как <i>переменное вознаграждение</i>. По
+мере того как привычки становятся обыденностью, мы начинаем тормозить
+прогресс ради новых ощущений. Самая большая угроза успеху - не провал,
+а скука. Все могут упорно работать, когда сильно мотивированы, важно
+продолжать работать, когда интерес падает.
+</p>
+</div>
+</li>
+
+<li><a id="org15419f8"></a><b>Гл.20 Обратная сторона хороших привычек</b><br />
+<div class="outline-text-3" id="text-org15419f8">
+<p>
+Привычки образуют основу мастерства. Однако, необходимо сознательно
+думать о своих успехах, чтобы вы продолжали его оттачивать. Именно в
+тот момент, когда вы почувствуете, что достаточно овладели навыком и
+вам становится комфортно, – нельзя останавливаться.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org36adeea"></a><b>Как проводить анализ привычек</b><br />
+<div class="outline-text-4" id="text-org36adeea">
+<p>
+Есть два отчёта, которые занимают немного времени - всего несколько
+часов в год, но для автора это решающие периоды для внесения
+изменений, рефлексии и анализа.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org49f544d"></a><b>Годовой отчёт</b><br />
+<ul class="org-ul">
+<li><a id="orgf5fa659"></a>Что получилось в этом году?<br /></li>
+<li><a id="org63f1bed"></a>Что не получилось в этом году?<br /></li>
+<li><a id="orgb22eb29"></a>Чему я научился?<br /></li>
+</ul>
+</li>
+
+<li><a id="org7ed0fe1"></a><b>Отчет добросовестности (летом)</b><br />
+<ul class="org-ul">
+<li><a id="orgd9a0891"></a>Какие главные ценности движут моей жизнью и работой?<br /></li>
+<li><a id="org6b81cfd"></a>Живу и работаю ли я добросовестно прямо сейчас?<br /></li>
+<li><a id="org5adae8f"></a>Как я могу постоавить перед собой более высокую планку в будущем?<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+
+
+<li><a id="orgc4da128"></a><b>Отказ от убеждений, которые тянут вас назад</b><br />
+<div class="outline-text-4" id="text-orgc4da128">
+<p>
+Чем священнее для нас идея, то есть чем глубже она привязана к
+идентичности, тем сильнее мы будем ее защищать от критики.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org48e4bb3"></a><b>Сохраняйте вашу идентичность маленькой</b><br />
+<div class="outline-text-5" id="text-org48e4bb3">
+<p>
+Одно из возможных решений – не делать один-единственный аспект
+идентичности гро- мадной частью самого себя. Если вы слишком
+привязываете все к одной иден- тичности, вы уязвимы. Теряя что-то
+одно, вы теряете себя.
+</p>
+</div>
+</li>
+
+<li><a id="org1b45080"></a><b>Смягчить потерю идентичности</b><br />
+<div class="outline-text-5" id="text-org1b45080">
+<p>
+Переопределите себя таким образом, чтобы сохранить важный аспект
+идентичности, даже если конкретная роль поменялась. Например, «Я –
+спортсмен» превращается в «я сильный духом человек, который любит
+физиче- скую нагрузку» или «Я – отличный солдат» превращается в «я
+дисциплинированный, надежный человек, который отлично работает в
+команде».
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-12-13 Пн 16:56</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

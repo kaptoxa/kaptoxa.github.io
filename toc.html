@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-26 Пт 10:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Theory of constraints (TOC)</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css"> @media only screen and (min-width: 700px) { #content { display: block; width: 700px; margin: 0 auto; }}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Theory of constraints (TOC)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5b84177"><b>Что такое TOC</b></a></li>
+<li><a href="#orgf925699"><b>Критерии для проверки логических построений</b></a></li>
+<li><a href="#orgffa3c89"><b>Инструменты ТОС</b></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5b84177" class="outline-2">
+<h2 id="org5b84177"><b>Что такое TOC</b></h2>
+<div class="outline-text-2" id="text-org5b84177">
+</div>
+<ul class="org-ul">
+<li><a id="orga5bd206"></a><b>Для кого нужна?</b><br />
+<div class="outline-text-3" id="text-orga5bd206">
+<p>
+ТОС посвещена управлению. Руководители и управленцы нуждаются в новом
+взгляде. Взгляде, который свойственен организатору, который
+преобразует организацию и знает с какой целью он это делает.
+</p>
+</div>
+</li>
+<li><a id="org424be2e"></a><b>Что есть цель?</b><br />
+<div class="outline-text-3" id="text-org424be2e">
+<p>
+Цель рассматривается как план развития организации, который может
+включать в себя множество результатов и необходимых условий для их
+осуществления, Голдратт не разделяет эти понятния.
+</p>
+</div>
+</li>
+<li><a id="orgdf01352"></a><b>Ключевое понятие - ограничение системы</b><br />
+<div class="outline-text-3" id="text-orgdf01352">
+<p>
+Понятие, необходимое для того, чтобы иметь возможность преобразовать
+систему или организацию. Необходимо иметь знания и представления о
+каждой части системы, чтобы найти то самое ограничение.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org032d81d"></a><b>Образ организации как цепи</b><br />
+<div class="outline-text-4" id="text-org032d81d">
+<p>
+Цепь рвётся лишь в одном звене, когда к ней прикладывают критическое
+усилие. Призван иллюстрировать что в каждый момент времени существует
+лишь одного ограничение системы.
+</p>
+</div>
+</li>
+<li><a id="org170cf3b"></a><b>Связь с процессами улучшения качества</b><br />
+<div class="outline-text-4" id="text-org170cf3b">
+<p>
+ТОС схожа с TQM если рассматривать их цели. Только реализуя TQM можно
+нагрузить всех работников задачей совершенствования системы - что есть
+не лучший вариант для рукводителя.
+</p>
+</div>
+</li>
+<li><a id="orgd4ab3a2"></a><b>Для чего нужен инструментарий ТОС</b><br />
+<div class="outline-text-4" id="text-orgd4ab3a2">
+<p>
+TOC - это план преобразований и сочетается с TQM в том, что указывает
+где изменения нужны в первую очередь, для того чтобы сократить
+длительное время ожидания тех же результатов.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org83f069c"></a><b>Принципы ТОС</b><br />
+<ul class="org-ul">
+<li><a id="orgfa2479a"></a><b>ТОС - предписывающая теория</b><br />
+<div class="outline-text-4" id="text-orgfa2479a">
+<p>
+Она не описывает законы природы, а даёт методы для человеческой
+деятельности. Законы имеют только объекты природы, такие объекты как
+системы или организации могут иметь законы. Но они обусловлены целью.
+</p>
+</div>
+</li>
+<li><a id="org0862ab9"></a><b>Ключевая проблема</b><br />
+<div class="outline-text-4" id="text-org0862ab9">
+<p>
+Почти всё, что нам не нравится в системе это лишь сигналы. Особенно
+если проблема проявляется снова и снова. Идея заключается в том, чтобы
+найти причину этой проблемы и выявить ограничения системы, а их не
+может быть много, исходя из представления что система похожа на цепь.
+</p>
+</div>
+</li>
+<li><a id="orge0dcec2"></a><b>Идеи - не есть решения</b><br />
+<div class="outline-text-4" id="text-orge0dcec2">
+<p>
+Решения по подчинению всех остальных звеньев цепи найденному
+ограничению должны воплощаться в жизнь.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org6d988b3"></a><b>Пять направляющих шагов ТОС</b><br />
+<ul class="org-ul">
+<li><a id="orgd3bd3d7"></a>Найти ограничение системы<br /></li>
+<li><a id="orgc8beea2"></a>Ослабить влияние ограничения системы<br /></li>
+<li><a id="org257466e"></a>Сосредоточить все усилия на ограничитиле системы<br /></li>
+<li><a id="org8aaa22d"></a>Снять ограничение<br /></li>
+<li><a id="orgd3f9748"></a>Вернуться к первому шагу<br /></li>
+</ul>
+</li>
+<li><a id="org2127ef0"></a><b>Параметры для оценки эффективности решений</b><br />
+<ul class="org-ul">
+<li><a id="org570be5d"></a>Производительность по денежному потоку (T)<br /></li>
+<li><a id="orgc41a193"></a>Вложения (I)<br /></li>
+<li><a id="orged7c5a5"></a>Операционные расходы (OE)<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgf925699" class="outline-2">
+<h2 id="orgf925699"><b>Критерии для проверки логических построений</b></h2>
+<div class="outline-text-2" id="text-orgf925699">
+</div>
+<ul class="org-ul">
+<li><a id="org3ea2f26"></a><b>Cвой язык и условия его применения</b><br />
+<div class="outline-text-3" id="text-org3ea2f26">
+<p>
+Для обоснования устройства диаграмм и деревьев есть ряд правил,
+которые являются проекцией мат.логики. Этот язык предлагается
+использовать в команде единомышленников, которые могут открыто
+обсуждать конструктивные предложения и идеи, воспринимают критику.
+</p>
+</div>
+</li>
+<li><a id="orge6f4bd5"></a><b>Критерии</b><br />
+<ul class="org-ul">
+<li><a id="org3a33fc4"></a><b>Из чего состоят схемы</b><br />
+<div class="outline-text-4" id="text-org3a33fc4">
+<p>
+Схемы состоят из блоков и стрелок. В блоках есть законченные
+утверждения, которые выражаются грамматически правильным предложением,
+в котором должны присутствовать субъект, действие, объект. Чтобы
+утверждение содержало одну мысль, необходимо исключать скрытые
+причинно-следственные отношения. Стрелки идут от причин к следствиям.
+</p>
+</div>
+</li>
+<li><a id="org8294faf"></a><b>Содержание</b><br />
+<div class="outline-text-4" id="text-org8294faf">
+<p>
+Должно соответсвовать опыту аудитории. Если слушающие могут с ним
+согласиться, то это так.
+</p>
+</div>
+</li>
+<li><a id="orgfe91a09"></a><b>Правила мат.логики</b><br />
+<div class="outline-text-4" id="text-orgfe91a09">
+<p>
+Следствие может быть вызвано либо взаимозависимыми либо независимыми
+причинами. Они могут быть составными.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org96f3f8a"></a><b>Достаточность</b><br />
+<div class="outline-text-5" id="text-org96f3f8a">
+<p>
+Логическое И. Чтобы связь существовала необходимо наличие двух
+взаимосвязанных причин. Обозначается стрелками проходящими через
+эллипс. Необходимо отображать только те причины, без которых
+наступление события было бы малозаметным или его не было бы вовсе.
+</p>
+</div>
+</li>
+<li><a id="orgb73635c"></a><b>Необходимость (Альтернативная причина)</b><br />
+<div class="outline-text-5" id="text-orgb73635c">
+<p>
+Логическое ИЛИ. Явление может быть вызвано одной из нескольких
+независимых причин. Если результат, вызванный предпологаемой
+альтернативной причиной значительно меньше резульата, выхываемого
+исходной, альтернативная может быть исключена.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="org8d31bd8"></a><b>Типичные ошибки и проверки</b><br />
+<ul class="org-ul">
+<li><a id="orga1bec82"></a><b>Подмена причины следствием</b><br />
+<div class="outline-text-4" id="text-orga1bec82">
+<p>
+Пример "Хороший клев": это когда на берегу много рыбаков и их ведра
+полны или вчера река кишела рыбой и сегодня открылся сезон?
+Подсказка: Посмотрите, является ли указанная причина скорее сигналом
+проявления, а не его источником или может ли его формулировка быть
+сокращенным вариантом более точного?
+</p>
+</div>
+</li>
+<li><a id="org7101128"></a><b>Проверочное следствие или косвенный признак</b><br />
+<div class="outline-text-4" id="text-org7101128">
+<p>
+В реальной жизни большинство причин влечет за собой несколько
+следтвий. Значит эти следтсвия можно использовать для доказательства
+истинности преложенных причин или подтверждения неявной причины.
+</p>
+</div>
+</li>
+<li><a id="orgb754032"></a><b>Тавтология</b><br />
+<div class="outline-text-4" id="text-orgb754032">
+<p>
+Следствие предполагается в качетсве обоснования причины. Не приведено
+косвенных признаков, подтверждающих причину.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgffa3c89" class="outline-2">
+<h2 id="orgffa3c89"><b>Инструменты ТОС</b></h2>
+<div class="outline-text-2" id="text-orgffa3c89">
+</div>
+<ul class="org-ul">
+<li><a id="orge908666"></a><b>Дерево текущей реальности</b><br />
+<ul class="org-ul">
+<li><a id="org30373ec"></a><b>Определение, цель</b><br />
+<div class="outline-text-4" id="text-org30373ec">
+<p>
+ДТР необходимо для выявления истинной причины проблем. ДТР - это
+дерево из видимых проявлений состояний системы (листьев) и лежащими в
+их основе причинами (корнем) и установленными между ними
+причинно-следственными связями.
+</p>
+
+<p>
+ДТР составляется для системы. Предполагается, что её элементы
+взаимосвязаны, т.е. изменения в одной части системы ведут к изменениям
+в других её частях. Части системы могут быть как нежелательными так и
+желательными явлениями.
+</p>
+</div>
+</li>
+<li><a id="orgc9bf7a6"></a><b>Описание</b><br />
+<div class="outline-text-4" id="text-orgc9bf7a6">
+<p>
+Суть работы над ДТР - поиск ограничения системы. Симптомы называются
+нежелательными явлениями, а факторы их вызывающие истинными
+причинами. Мы почти всегда сталкиваемся с переплетением множества
+факторов.
+</p>
+
+<p>
+Нежелательное явление характеризуется тем, что отрицательно
+сказывается на всей системе. Построение ДТР начиная с НЯ, так как это
+ускоряет анализ, позволяя быстрее найти ограничение системы. Истинная
+причина - это начало причин и следствий. Это может быть последнее
+звено цепи, находящейся в сфере вашего влияния.
+</p>
+
+<p>
+Ключевая причина это истинная причина решение которой даст больше
+плодов. Она скорее всего окажется в корне получившегося ДТП. Если КП
+лежит вне сферы нашего влияния, следует признать что проблема
+отсутствует.
+</p>
+
+
+<div id="org26c22bc" class="figure">
+<p><img src="2021-11-26_10-51-16_2021-11-26_09-32-19.png" alt="2021-11-26_10-51-16_2021-11-26_09-32-19.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="org6c9e71b"></a><b>Инструкция по созданию ДТР</b><br />
+<ul class="org-ul">
+<li><a id="orgc6d5f89"></a>Определите границы зоны контроля и сферы влияния<br /></li>
+<li><a id="orga1ca5fd"></a>Составьте список нежелательных явлений<br /></li>
+<li><a id="org410ac13"></a>Начинайте строить связи по правилам КПЛП, задавая вопросы "почему?"<br /></li>
+<li><a id="org389c9ea"></a>Определите ИП и КП, уберите лишнее<br /></li>
+</ul>
+</li>
+<li><a id="org8af3fa6"></a><b>Анализ ДТР</b><br />
+<div class="outline-text-4" id="text-org8af3fa6">
+<p>
+Проверяющий не обязан разбираться в КПЛП, хотя это бы не
+помешало. Главное, чтобы этот человек обладал хотя бы интуитивным
+знанием в рассматриваемой области. Если вы сами владее КПЛП, то
+сможете корректно переформулировать вопросы и замечания проверяющего.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org9f42e29"></a><b>Диаграмма разрешения конфликтов "Грозовая туча"</b><br />
+<ul class="org-ul">
+<li><a id="orgc0f1c96"></a><b>Определение, цель</b><br />
+<div class="outline-text-4" id="text-orgc0f1c96">
+<p>
+ДРК является механизмом генерации идей и нужна, чтобы удостовериться,
+что конфликт есть, дать подробное объяснение причинам существования
+проблемы и описать все ошибочные посылки. Успешное разрешение
+конфликта заключается в отказе от ошибочных посылок, а не нахождении
+компромисса.
+</p>
+</div>
+</li>
+<li><a id="org658c708"></a><b>Описание</b><br />
+<div class="outline-text-4" id="text-org658c708">
+<p>
+ДРК это часть большой схемы, которая описывает "кусочек" существующей
+действительности. В текущем состоянии методы обеспечения ставят под
+угрозу выполнения двух необходимых условий. Прорыв это какое-либо
+действие или видение желаемой ситуации - нечто пока не существующее,
+но жизненно важное для развития системы, решение которое позволит
+выполнить все необходимые условия.
+В ТОС нет цели построить на 100% достоверное ДРК, т.к. оно будет
+неразрешимо. ДРК это элемент построений, который необходим для
+выражения существующего конфликта и последующего обсуждения с
+командой.
+</p>
+
+
+<div id="org4b1f739" class="figure">
+<p><img src="2021-11-26_10-51-44_2021-11-26_10-40-03.png" alt="2021-11-26_10-51-44_2021-11-26_10-40-03.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="org60a78a8"></a><b>Инструкция по созданию ДРК</b><br />
+<ul class="org-ul">
+<li><a id="orgb38b7cc"></a><b>Обозначьте конфликт методов обеспечения</b><br />
+<div class="outline-text-5" id="text-orgb38b7cc">
+<p>
+Под методами обеспечения предполагаются какая-либо деятельность,
+которая происходит регулярно. При этом данная деятельность имеет связь
+с нежелаетльными явлениями, либо сама представляет из себя НЖЯ. На
+схеме два конфликтующих прямоугольника обозначаются буквами D, D'.
+</p>
+</div>
+</li>
+<li><a id="org9ab46d7"></a><b>Определите необходимые условия</b><br />
+<div class="outline-text-5" id="text-org9ab46d7">
+<p>
+Их содержание должно определяться ответом на вопрос: "А что мы хотим
+обеспечить этим методом?". На схеме ДРК НУ обозначаются B и C.
+</p>
+</div>
+</li>
+<li><a id="org5f71ad2"></a><b>Сформулируйте задачу</b><br />
+<div class="outline-text-5" id="text-org5f71ad2">
+<p>
+После того, как мы сформулировали НУ необходимо найти "ближайшую"
+цель, которую обеспечивают два описанных условия. Цель подписывается
+на схеме ДРК буквой А.
+</p>
+</div>
+</li>
+<li><a id="org8d87d94"></a><b>Проверьте логические связи</b><br />
+<div class="outline-text-5" id="text-org8d87d94">
+<p>
+Связи ДРК проверяются с помощью КПЛП. При этом можно использовать следующие
+словесные формулы: для того, чтобы решить А мы должны обеспечить B
+(так же к С). Для того, чтобы обеспечить B, мы должны D. Кроме того,
+нужно удостовериться, что методы обеспечения ставят под угрозу НУ,
+тоесть из схемы должно быть понятно почему D ставит под угрозу C, и D'
+ставит под угрозу B. На этом этапе необходимо ограничиться принципом
+необходимости. Нам нужно прежде всего обеспечить наглядность ДРК для
+начала обсуждения конфликта.
+</p>
+</div>
+</li>
+<li><a id="orge4c7dc8"></a><b>Перечислите исходные посылки</b><br />
+<div class="outline-text-5" id="text-orge4c7dc8">
+<p>
+После того, как дерево представлено аудитории. Можно начинать
+коллективно брейнштормить исходные посылки к дереву по принципу
+достаточности. Мы спрашиваем, а достаточно ли для этой связи такой
+причины? И добавляем исходную посылку, подразумевая что для
+возникновения следствия нам будет необходима и истинность исходной
+посылки и истинность данной причины (это может быть сделано любой
+связи тучи).
+</p>
+
+
+<div id="org19c18bc" class="figure">
+<p><img src="2021-11-26_10-51-56_2021-11-26_10-43-38.png" alt="2021-11-26_10-51-56_2021-11-26_10-43-38.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="orgec63023"></a><b>Оцените исходные посылки</b><br />
+<div class="outline-text-5" id="text-orgec63023">
+<p>
+Таким образом, если мы найдём ложную исходную посылку, это будет
+означать, что она будет возможным вариантом прорыва. Это возможно
+потому, что для обеспечения логики связи нам нужна истинность данной
+посылки. Если этого нет - связь рвётся, туча разрешается (или
+рассеивается).
+</p>
+</div>
+</li>
+<li><a id="orgeb960ef"></a><b>Предложите варианты прорыва</b><br />
+<div class="outline-text-5" id="text-orgeb960ef">
+<p>
+Если мы разрушили одну из связей в туче, это не значит, что это даст
+какие-то плоды. Например, в классической туче Голдратта связь между
+"Обеспечить условия контракта" и "Вернуться к графику выполнения
+работ" рвётся ложностью посылки "Исходные условия контракта были
+верные", но нам это ничего не даст.
+</p>
+</div>
+</li>
+<li><a id="orgab4bc0c"></a><b>Выберите оптимальное решение</b><br />
+<div class="outline-text-5" id="text-orgab4bc0c">
+<p>
+Оптимальное решение, это тот из вариантов прорыва, который даст нам
+больше плодов.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org52a5594"></a><b>Анализ ДРК</b><br />
+<div class="outline-text-4" id="text-org52a5594">
+<p>
+ДРК должна достаточно точно описывать существующую
+ситуацию. Одновременно с этим не нужно подкреплять существующий
+конфликт "сухими" наблюдениями. В ДРК утверждение должно
+восприниматься аудиторией как обязательное требование. Ключевое слово
+тут - "восприниматься". Нет цели создать неразрешимую ДРК. Секрет
+успешного ДРК кроется в возможности раскрыть и оспорить исходные
+посылки. Чтобы проверить действительно ли мы нашли прорыв необходимо
+ДБР.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgc9c03dd"></a><b>Дерево будущей реальности</b><br />
+<ul class="org-ul">
+<li><a id="orgc7a3ca7"></a><b>Определение, цель</b><br />
+<div class="outline-text-4" id="text-orgc7a3ca7">
+<p>
+ДБР позволяет удостовериться, ведёт ли выбранная идея к желаемым
+результатам.  Цель - вести стратегическое планирование.
+</p>
+</div>
+</li>
+<li><a id="org26cbca0"></a><b>Описание</b><br />
+<div class="outline-text-4" id="text-org26cbca0">
+<p>
+Возможно ли моделирование в управлении? ТОС предлагает для этого
+ДБР. Развивая основную идею преобразований, ДБР позволяет учесть
+существующие в системе важные моменты.
+ДБР строится снизу вверх, от возможных вариантов прорыва. При этом
+необходимо состредоточиться на полной проработке связей по принципу
+достаточности. Таким образом, мы сможем учесть наибольшее количество
+возожных негативных эффектов.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgf67b687"></a><b>Дерево перехода</b><br />
+<div class="outline-text-3" id="text-orgf67b687">
+<p>
+Револьеврный проект. Сетевые графики. Важен только следующий шаг и
+отсутствие длинных стрелок между шагами. Предсказать мы ничего не
+можем, но мы можем опереться на нашу логику.
+</p>
+</div>
+</li>
+<li><a id="orga765c5a"></a><b>План преобразований</b><br /></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
