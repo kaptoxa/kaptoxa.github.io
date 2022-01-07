@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-07 Fri 16:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Как делать полезные заметки</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Alex Blednov" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css"> @media only screen and (min-width: 700px) { #content { display: block; width: 700px; margin: 0 auto; }}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Как делать полезные заметки</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org33ce296"><b>Часть 1. Введение</b></a></li>
+<li><a href="#org11d9943"><b>Часть 2. Четыре основных принципа</b></a></li>
+<li><a href="#org7ff66f7"><b>Часть 3. Шесть шагов к успешному письму</b></a></li>
+</ul>
+</div>
+</div>
+<p>
+<i>Писательство не идёт вслед за познанием, изучением и обучением. Оно
+является средой для него</i>.
+</p>
+
+<div id="outline-container-org33ce296" class="outline-2">
+<h2 id="org33ce296"><b>Часть 1. Введение</b></h2>
+<div class="outline-text-2" id="text-org33ce296">
+</div>
+<ul class="org-ul">
+<li><a id="org8535c6b"></a><b>1.1 В основе этой книги лежит две идеи</b><br />
+<ul class="org-ul">
+<li><a id="orgb7c1fab"></a>Техника простого ящика для заметок<br /></li>
+<li><a id="org16e31c4"></a>Изменение привычек работы с заметками<br /></li>
+</ul>
+</li>
+<li><a id="orgab3fd4f"></a><b>1.2 Всё, что вам нужно сделать</b><br />
+<div class="outline-text-3" id="text-orgab3fd4f">
+<p>
+В случае если рабочий процесс организован, всё что вам нужно делать
+это думать, читать, понимать и придумывать идеи. Заметки - лишь
+осязаемый <a href="20211119112128.html#ID-b689ddb1-ddc2-4c63-95e4-89249a87bb43">результат этих процессов.</a> <a href="20211116040530.html#ID-f3792e3c-0a8f-4f24-9140-bfa29a59cf19">Шаги zettelkasten</a> могут показаться
+алгоритмом. Однако они проявляют свои сильные стороны именно тогда,
+когда мы работаем над несколькими идеями одновременно.
+</p>
+</div>
+</li>
+<li><a id="org0fe53f3"></a><b>1.3 <a href="20211116035929.html#ID-50fa4515-c17f-434f-ab47-8b8e766895f2">Всё, что должно быть под рукой</a></b><br /></li>
+</ul>
+</div>
+<div id="outline-container-org11d9943" class="outline-2">
+<h2 id="org11d9943"><b>Часть 2. Четыре основных принципа</b></h2>
+<div class="outline-text-2" id="text-org11d9943">
+</div>
+<ul class="org-ul">
+<li><a id="org8af0b8f"></a><b>2.1 <a href="20211117044141.html#ID-970a303d-da17-4d43-b990-e1e8a53e15fe">Письмо в приоритет мышления</a></b><br />
+<div class="outline-text-3" id="text-org8af0b8f">
+<p>
+Учёба не готовит студентов к самостоятельным исследованиям, учёба это
+и есть <a href="20211117045418.html#ID-e283c897-824b-4575-80b0-5dcea0106c40">самостоятельное исследование</a>. 
+</p>
+</div>
+</li>
+<li><a id="org99f6bc9"></a><b>2.2 Простота превыше всего</b><br />
+<div class="outline-text-3" id="text-org99f6bc9">
+<p>
+Ящик для заметок создан для того, чтобы напомнить вам об идеях, о
+которых вы уже забыли, позволяя вашему мозгу сосредоточиться на
+размышлении, а не на запоминании. Для качественного обращения с
+заметками и достижения их критической массы, их важно разделять.
+Три типа заметок:
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="orga163cce"></a><b>Повеседневные</b><br /></li>
+<li><a id="orgb9916a0"></a><b>Постоянные</b><br /></li>
+<li><a id="orgf33f987"></a><b>Заметки для проекта</b><br /></li>
+</ul>
+</li>
+<li><a id="org52f0e87"></a><b>2.3 Никто не начинает с нуля</b><br />
+<div class="outline-text-3" id="text-org52f0e87">
+<p>
+Почти каждое руководство по написанию рекомендует начинать с мозгового
+штурма. Если вы до этого момента не записывали свои мысли, мозг
+действительно единственное место, куда имеет смысл обратиться. Такое
+предложение удивительно, так как сам мозг не является источником
+большинства наших идей.
+</p>
+</div>
+</li>
+<li><a id="orge82c341"></a><b>2.4 Пусть работа ведет вас вперёд.</b><br />
+<div class="outline-text-3" id="text-orge82c341">
+<p>
+Ничто не мотивирует нас больше, чем перспекитва стать лучше в том, что
+мы делаем. И единственный шанс сделать это - своевременная и понятная
+обратная связь.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org65fe1dc"></a><b>Чтение с ручкой в руке</b><br />
+<div class="outline-text-4" id="text-org65fe1dc">
+<p>
+Заставляет нас думать о том, что мы читаем, и проверять своё
+понимание. мы обычно думаем, что поняли прочитанное, - до тех пор,
+пока не попытаемся переписать это своими словами
+</p>
+</div>
+</li>
+<li><a id="org8f2e46c"></a><b>Постоянные заметки</b><br />
+<div class="outline-text-4" id="text-org8f2e46c">
+<p>
+Письменное выражение собственных мыслей заставляет нас понять,
+достаточно ли мы их продумали.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org7ff66f7" class="outline-2">
+<h2 id="org7ff66f7"><b>Часть 3. Шесть шагов к успешному письму</b></h2>
+<div class="outline-text-2" id="text-org7ff66f7">
+</div>
+<ul class="org-ul">
+<li><a id="org2242b58"></a><b>3.1 Раздельные и взаимосвязанные задачи</b><br />
+<ul class="org-ul">
+<li><a id="org22fe0c9"></a><b>Многозадачность не лучшая идея</b><br />
+<div class="outline-text-4" id="text-org22fe0c9">
+<p>
+Многозадачность это лишь частые переключения между задачами. Она
+отрицательно влияет на наше внимание и способность к постоянному
+вниманию. Ящик для заметок не только обеспечивает четкую структуру для
+работы, но и заставляет нас переключать внимание сознательно,
+поскольку у нас есть возможность выполнить одну задачу в разумные
+сроки, прежде чем перейти к следующей.
+</p>
+</div>
+</li>
+<li><a id="org6bac026"></a><b>Уделяйте каждой задаче должное внимание</b><br />
+<div class="outline-text-4" id="text-org6bac026">
+<p>
+Ключ к творчеству — это способность переключаться между широко
+открытым пытливым умом и узкими аналитическими рамками.
+</p>
+</div>
+</li>
+<li><a id="org55b9d1b"></a><b>Не строй планов, стань экспертом</b><br /></li>
+<li><a id="org76881c3"></a><b>Освободитесь от лишнего</b><br />
+<div class="outline-text-4" id="text-org76881c3">
+<p>
+Нам намного легче запоминать то, что мы понимаем, чем то, чего мы не
+понимаем. Выберите понимание, а не "зубрёжку".
+Используйте <a href="20220107045408.html#ID-28e4ecff-2a3e-48cc-a9ad-3d4bad9d2897">эффект Зейгарник</a> для освобождения рабочей памяти:
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org24766fc"></a><b>Разбейте задачу "письма" на более мелкие</b><br /></li>
+<li><a id="org063eb40"></a><b>Убедитесь, что мы всегда записываем результаты размышлений</b><br /></li>
+</ul>
+</li>
+<li><a id="org593918f"></a><b>Сократите количество решений</b><br />
+<div class="outline-text-4" id="text-org593918f">
+<p>
+О экономии <a href="Мыслетопливо.html#ID-3c0423a9-6081-426f-a175-e6766e826c60">мыслетоплива</a>  
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orge1d5d52"></a><b>3.2 Читайте для понимания</b><br />
+<ul class="org-ul">
+<li><a id="org64b7195"></a><b>Читайте с ручкой в руке</b><br />
+<div class="outline-text-4" id="text-org64b7195">
+<p>
+Литературные заметки мы делаем для понимания прочитанного. Эти идеи
+встроены в контекст, который нам не принадлежит, и выражены на языке,
+который бы мы не стали использвоать. Однако, они обеспечивают базу для
+следующего шага - написания основных заметок.
+</p>
+</div>
+</li>
+<li><a id="org72d1417"></a><b>Мыслите шире</b><br />
+<div class="outline-text-4" id="text-org72d1417">
+<p>
+Предвзятость подтверждения важна для чтения. Выбор того, что мы читаем
+должен быть разумным.
+</p>
+<blockquote>
+<p>
+<i>Нужно больше подмечать противоречащих нашим идеям фактов, так как они
+ускользают от нашего внимания.</i>
+Чарльз Дарвин.
+</p>
+</blockquote>
+<p>
+Гипотезы надо ставить в качестве отправной точки исследования, а не
+его результата. Единственный критерий для добавления идеи в ящик -
+добавляет ли она что-нибудь к "дисскуссиям" в ящике. Мы должны быть
+избирательны с точки зрения релевантности, а не с точки зрения позиций
+за и против.
+</p>
+</div>
+</li>
+<li><a id="org69b2df4"></a><b>Найдите суть</b><br />
+<div class="outline-text-4" id="text-org69b2df4">
+<p>
+Паттерны мышления помогают читать лучше и быстрей. Однако, для того
+чтобы использовать свой ум нужна решительность и смелость. Тот, кто не
+знает как применить своё собственное понимание - незрел.
+</p>
+</div>
+</li>
+<li><a id="org12a480a"></a><b>Учитесь читать</b><br />
+<div class="outline-text-4" id="text-org12a480a">
+<blockquote>
+<p>
+<i>Если вы не можете выразить это ясно, вы сами этого не понимаете.</i>
+Джон Сёрл.
+</p>
+</blockquote>
+<p>
+Ричард Фейнман мог признать что он понимает тему только после того,
+как прочтёт о ней лекцию. Чтение с ручкой в руке это малый эквивалент
+такой лекции, которая служила обратной связью для Фейнмана. Письмо
+помогает нам противостоять самим себе, когда мы не понимаем чего-то
+так, как нам хотелось бы в это верить.
+</p>
+</div>
+</li>
+<li><a id="orgabb8e4a"></a><b>Учитесь, читая</b><br />
+<div class="outline-text-4" id="text-orgabb8e4a">
+<p>
+Учится тот, кто выполняет работу. Удобство восприятия информации
+благодаря её структурированной последовательной подаче не есть
+обучение. Когда мы пытаемся ответить на вопрос до того, как узнаём
+правильный ответ, мы лучше запоминаем его, даже если попытка
+провалилась. Запоминание побочный эффект понимания и размышления идей.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgc2289b8"></a><b>3.3 Делайте полезные заметки</b><br />
+<div class="outline-text-3" id="text-orgc2289b8">
+<p>
+Успешных студентов отличает то, что они могут мыслить вне контекста
+книги, которую читают. Сумма заметок в ящике Лумана больше, чем сумма
+страниц в художественной книге.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org971d247"></a><b>Думайте вне рамок</b><br />
+<div class="outline-text-4" id="text-org971d247">
+<p>
+Мозг - машина генерации преждевременных закономерностей. Он нуждается
+в поддержке - выносе мыслей вовне с целью их критического
+рассмотрения.
+Вопрос к литературной заметке: чем обоснована эта идея? Вопрос к
+постоянной заметке: почему меня заинтересовала эта идея? для чего она мне?
+</p>
+</div>
+</li>
+<li><a id="orgb8f3c96"></a><b>Учитесь, не пытаясь</b><br />
+<div class="outline-text-4" id="text-orgb8f3c96">
+<p>
+Забывание - ментальный барьер между нашим сознательным мышлением и
+долговременной памятью, позволяющий нам мыслить абстрактно.
+Какие сигналы мы можем использовать для вспоминания?
+Нужно связать часть информации с как можно большим количеством
+значимых контекстов, что и является уточнением смысла.
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org86d844f"></a><b>3.4 Развивайте идеи</b><br />
+<div class="outline-text-3" id="text-org86d844f">
+<p>
+Нам не нужно беспокоиться о полноте информации. Мы пишем только в том
+случае, если это помогает нам в нашем собственном мышлении. Будучи
+продолжением нашей собственной памяти - ящик это среда в которой мы
+думаем, а не то, о чём мы думаем.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org99bff42"></a><b>Разрабатывайте темы</b><br />
+<div class="outline-text-4" id="text-org99bff42">
+<p>
+Ящик для заметок не является архивом. Удобство нахождения заметки для
+него не главное. Если вы организуете хранение заметок сверху вниз вы
+столкнётесь c <a href="20211126113041.html#ID-cc659221-06cf-4db2-a65e-c69a59ac24f5">пробемами.</a>  Для нахождения заметки достаточно лишь
+небольшого количества точек входа.
+</p>
+</div>
+</li>
+<li><a id="org1b81dad"></a><b>Создавайте умные связи</b><br />
+<div class="outline-text-4" id="text-org1b81dad">
+<p>
+Луман использовал структурные заметки и связи между заметками, по силе
+связи всключающие в себя все, даже самые неочевидные.
+</p>
+</div>
+</li>
+<li><a id="orgb736bcb"></a><b>Сравнивайте, исправляйте, делайте различия</b><br />
+<div class="outline-text-4" id="text-orgb736bcb">
+<p>
+При добавлении новой заметки случается много удивительных открытий.
+</p>
+</div>
+</li>
+<li><a id="org5bdba34"></a><b>Соберите свои интерпретации для мышления</b><br />
+<div class="outline-text-4" id="text-org5bdba34">
+<p>
+Ментальные модели - самые действенные концепции в каждой
+дисциплине. Собранные вместе, они становятся "мирской мудростью".
+</p>
+</div>
+</li>
+<li><a id="org8efa763"></a><b>Ящик как двигатель творчества</b><br />
+<div class="outline-text-4" id="text-org8efa763">
+<p>
+Интуиция это игтегрированная практическая сторона наших
+интеллектуальных усилий. Ящик - среда, где заметки могут "встречаться"
+друг с другом и прояснять свои "тонкие" сходства и различия.
+</p>
+</div>
+</li>
+<li><a id="org86a4fb2"></a><b>Думайте внутри ящика</b><br />
+<div class="outline-text-4" id="text-org86a4fb2">
+<p>
+Абстракции нужны не только для академических процессов
+понимания. Творчеству нельзя научить как правилу, к нему нельзя
+подходить как к плану. Но мы можем быть уверены, что наша рабочая
+среда позволяет проявлять творческий подход.
+</p>
+</div>
+</li>
+<li><a id="org0344ae5"></a><b>Творчество на ограничениях</b><br />
+<div class="outline-text-4" id="text-org0344ae5">
+<p>
+Луман использовал для заметок формат А6. Такое ограничение
+обеспечивает свободу от необходимости делать выбор. И обосновывает
+необходимость <a href="20220107083536.html#ID-30c18168-27eb-4278-ae30-1dc1e427e66a">атомарности заметок</a>  
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org7a23792"></a><b>3.5 Делитесь инсайтами</b><br />
+<ul class="org-ul">
+<li><a id="org7c52a19"></a><b>Штурм ящика</b><br />
+<div class="outline-text-4" id="text-org7c52a19">
+<p>
+Мозговой штурм для определения темы вашего исследования больше не
+нужен - просто загляните в свой ящик для заметок. Можно выбрать тему
+исходя, например, из количества заметок по этой теме.
+</p>
+</div>
+</li>
+<li><a id="orgb157733"></a><b>От сверху вниз до снизу вверх</b><br />
+<div class="outline-text-4" id="text-orgb157733">
+<p>
+Открытость новым идяем это результат проработки существующих идей -
+иначе все лучшие художники были бы любителями.
+</p>
+</div>
+</li>
+<li><a id="org04cd24d"></a><b>Как добиться успеха</b><br />
+<div class="outline-text-4" id="text-org04cd24d">
+<p>
+Не контролируйте обстоятельства, конролируйте возможность изменения
+направления работы. Если вам предоставляется выбор между темами, одна
+из которых вас мотивирует на работу - это может задать ориентир,
+которому вы можете следовать.
+<a href="20220107084229.html#ID-a4809934-4b59-4d07-9d3f-da7afc1299a0">Когда работа может стать источником мотивации</a>
+</p>
+</div>
+</li>
+<li><a id="orgacf2ea9"></a><b>Завершение</b><br />
+<div class="outline-text-4" id="text-orgacf2ea9">
+<p>
+Применяя ящик для заметок вы столкнётесь с проблемой обратной проблеме
+"чистого листа". Вам скорее придётся выбирать их тех заметок, которые
+не нужно включать в работу. 
+</p>
+</div>
+</li>
+<li><a id="orge1f0311"></a><b>Откажитесь от планирования и станьте экспертом</b><br />
+<div class="outline-text-4" id="text-orge1f0311">
+<p>
+"Студенческий" синдром работает даже у тех, кто его знает и осознаёт.
+<a href="20220106100129.html#ID-3b23578c-6dd2-41ca-b3b9-3ef49f5a6305">Дураки учаться на своём опыте</a>
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org1e49f90"></a><b>3.6 Заведите привычку</b><br />
+<div class="outline-text-3" id="text-org1e49f90">
+<p>
+Привычка это то, что предсказуемо, но не контролируемо. В случае с
+чтением в с ручкой в руке, или работой с заметками дело выработки
+новой привычки пойдёт легче, так как это действия с мнгновенной
+обратной связью.
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
